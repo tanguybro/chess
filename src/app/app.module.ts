@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PieceComponent } from './piece/piece.component';
+import { ChessboardComponent } from './chessboard/chessboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PieceComponent
+    ChessboardComponent
   ],
   imports: [
     BrowserModule,

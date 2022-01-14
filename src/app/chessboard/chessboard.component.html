@@ -1,0 +1,4 @@
+<div class="container d-flex align-items-center">
+    <img src="../../assets/chessboard.png" class="col-8 img-fluid m-auto">
+    <img src="../../assets/{{ piece.color }}_{{ piece.type }}.png" class="img-fluid" *ngFor="let piece of pieces" (click)="onSelect(piece)">
+</div>
