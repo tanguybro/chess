@@ -32,7 +32,7 @@ export class ChessboardComponent implements OnInit {
   ngAfterViewInit(): void {
     // Init pieces position
     for(let piece of this.pieces) {
-      $('#' + piece.id).css({"position": "absolute", "top": this.cells_y.get(piece.position) + "px", "left": this.cells_x.get(piece.position) + "px"});
+      $('#' + piece.id).css({"position": "absolute", "bottom": this.cells_y.get(piece.position) + "px", "left": this.cells_x.get(piece.position) + "px"});
     }
   }
 
@@ -40,11 +40,11 @@ export class ChessboardComponent implements OnInit {
     this.selectedPiece = piece;
     $('.piece').removeClass('border border-primary')
     $('#' + piece.id).addClass('border border-primary')
-    //$('#' + piece.id).css({"position": "absolute", "top": "20px"});
   }
 
   onClick(): void {
     $('.piece').removeClass('border border-primary')
+    //$('#' + piece.id).css({"position": "absolute", "top": "20px"});
   }
 
   initCellsPosition(): void {
@@ -55,7 +55,7 @@ export class ChessboardComponent implements OnInit {
     for(let row = 1; row <= 8; row++) {
         for (let column of columns) {
             let x = this.boardSize + this.cellSize * (column.charCodeAt(0) - 97) - 10;
-            let y = this.cellSize * (row + 1) - 10;
+            let y = this.cellSize * (row + 1) - 15;
             this.cells_x.set(column + row, x);
             this.cells_y.set(column + row, y);
       }
