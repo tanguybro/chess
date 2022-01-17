@@ -38,13 +38,15 @@ export class ChessboardComponent implements OnInit {
 
   onSelect(piece: Piece): void {
     this.selectedPiece = piece;
-    $('.piece').removeClass('border border-primary')
-    $('#' + piece.id).addClass('border border-primary')
+    $('.piece').removeClass('border border-primary');
+    $('#' + piece.id).addClass('border border-primary');
   }
 
-  onClick(): void {
-    $('.piece').removeClass('border border-primary')
-    //$('#' + piece.id).css({"position": "absolute", "top": "20px"});
+  onClick(event: MouseEvent): void {
+    $('.piece').removeClass('border border-primary');
+    if(this.selectedPiece != null) {
+      $('#' + this.selectedPiece.id).css({"top": (event.clientY - 20) + "px", "left": (event.clientX - 25) + "px"});
+    }
   }
 
   initCellsPosition(): void {

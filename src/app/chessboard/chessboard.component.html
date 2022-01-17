@@ -1,5 +1,5 @@
 <div class="container d-flex align-items-center">
-    <img id="chessboard" src="../../assets/chessboard.png" class="col-6 img-fluid m-auto" (click)="onClick()">
+    <img id="chessboard" src="../../assets/chessboard.png" class="col-6 img-fluid m-auto" (click)="onClick($event)">
     <a href="#"><img id="{{piece.id}}" src="../../assets/{{ piece.color }}_{{ piece.type }}.png" class="piece img-fluid"
         *ngFor="let piece of pieces" (click)="onSelect(piece)"></a>
 </div>
